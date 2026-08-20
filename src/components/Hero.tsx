@@ -1,6 +1,7 @@
-import { ArrowRight, Mail, Download, Terminal } from "lucide-react";
+import { ArrowRight, Mail, Download } from "lucide-react";
 import { profile, quickFacts, socialLinks } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
+import photoAsset from "@/assets/aditya-portfolio.png.asset.json";
 
 export function Hero() {
   return (
@@ -51,7 +52,19 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={120}>
-            <HeroVisual />
+            <div
+              className="relative overflow-hidden rounded-3xl border border-border p-2"
+              style={{ background: "var(--gradient-surface)", boxShadow: "var(--shadow-elegant)" }}
+            >
+              <div className="rounded-[1.25rem] border border-border/70 bg-background/70">
+                <img
+                  src={photoAsset.url}
+                  alt={`Professional portrait of ${profile.name}`}
+                  className="aspect-[3/4] w-full object-cover object-top"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </Reveal>
         </div>
 
@@ -72,55 +85,5 @@ export function Hero() {
         </Reveal>
       </div>
     </section>
-  );
-}
-
-function HeroVisual() {
-  const lines = [
-    { text: "import pandas as pd", tone: "text-primary" },
-    { text: "from sklearn.naive_bayes import MultinomialNB", tone: "text-foreground/80" },
-    { text: "", tone: "" },
-    { text: "profile = {", tone: "text-foreground/80" },
-    { text: '  "role": "CS Student",', tone: "text-muted-foreground" },
-    { text: '  "focus": ["data", "ml", "software"],', tone: "text-muted-foreground" },
-    { text: '  "status": "learning · building",', tone: "text-muted-foreground" },
-    { text: "}", tone: "text-foreground/80" },
-  ];
-
-  return (
-    <div
-      className="rounded-3xl border border-border p-2"
-      style={{ background: "var(--gradient-surface)", boxShadow: "var(--shadow-elegant)" }}
-    >
-      <div className="rounded-[1.25rem] border border-border/70 bg-background/70">
-        <div className="flex items-center gap-2 border-b border-border/70 px-4 py-3">
-          <span className="size-2.5 rounded-full bg-destructive/70" aria-hidden />
-          <span className="size-2.5 rounded-full bg-muted-foreground/50" aria-hidden />
-          <span className="size-2.5 rounded-full bg-primary/70" aria-hidden />
-          <span className="ml-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Terminal className="size-3.5" aria-hidden /> profile.py
-          </span>
-        </div>
-        <pre className="overflow-x-auto px-4 py-5 font-mono text-[12.5px] leading-6 sm:text-sm">
-          <code>
-            {lines.map((line, i) => (
-              <span key={i} className={`block ${line.tone}`}>
-                {line.text || "\u00a0"}
-              </span>
-            ))}
-          </code>
-        </pre>
-        <div className="grid grid-cols-3 gap-2 border-t border-border/70 p-4">
-          {["Python", "SQL", "C++"].map((t) => (
-            <span
-              key={t}
-              className="rounded-lg border border-border bg-secondary/50 py-2 text-center text-xs text-muted-foreground"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 }

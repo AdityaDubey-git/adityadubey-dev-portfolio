@@ -33,6 +33,7 @@ export const profile = {
   institution: "MIT ACSC, Pune",
   graduation: "2028",
   status: "Open to Opportunities",
+  photo: "aditya-portfolio.png",
   intro:
     "I'm a B.Sc. Computer Science student at MIT ACSC, Pune, passionate about programming, data analytics, data science, and technology. I enjoy building practical projects, learning new skills, and solving problems through technology.",
 };

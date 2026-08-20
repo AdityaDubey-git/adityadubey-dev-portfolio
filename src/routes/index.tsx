@@ -17,6 +17,7 @@ import { Footer } from "@/components/Footer";
 const title = "Aditya Dubey | Computer Science Student | Data & Technology Portfolio";
 const description =
   "Portfolio of Aditya Dubey, a B.Sc. Computer Science student at MIT ACSC, Pune, interested in Python, Data Analytics, Data Science, SQL, Machine Learning, and Software Development.";
+const imageUrl = "https://id-preview--0df295fd-c1bd-42e7-a486-fb7bd1843dc7.lovable.app/__l5e/assets-v1/316ca9ba-840e-462e-bc5a-d51667177add/aditya-portfolio.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,9 +26,11 @@ export const Route = createFileRoute("/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:image", content: imageUrl },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: imageUrl },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
