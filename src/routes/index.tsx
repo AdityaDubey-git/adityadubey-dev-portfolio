@@ -1,24 +1,78 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Education } from "@/components/Education";
+import { Skills } from "@/components/Skills";
+import { Expertise } from "@/components/Expertise";
+import { Projects } from "@/components/Projects";
+import { Experience } from "@/components/Experience";
+import { Certifications } from "@/components/Certifications";
+import { CareerGoals } from "@/components/CareerGoals";
+import { Strengths } from "@/components/Strengths";
+import { Hobbies } from "@/components/Hobbies";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Aditya Dubey | Computer Science Student | Data & Technology Portfolio";
+const description =
+  "Portfolio of Aditya Dubey, a B.Sc. Computer Science student at MIT ACSC, Pune, interested in Python, Data Analytics, Data Science, SQL, Machine Learning, and Software Development.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "profile" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Aditya Dubey",
+          jobTitle: "B.Sc. Computer Science Student",
+          address: { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
+          alumniOf: { "@type": "CollegeOrUniversity", name: "MIT ACSC, Pune" },
+          knowsAbout: ["Python", "Data Analytics", "SQL", "Machine Learning", "C++", "Data Visualization"],
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Education />
+        <Skills />
+        <Expertise />
+        <Projects />
+        <Experience />
+        <Certifications />
+        <CareerGoals />
+        <Strengths />
+        <Hobbies />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
