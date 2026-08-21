@@ -39,7 +39,11 @@ export const profile = {
 };
 
 /** Add real URLs here to activate the matching buttons. */
-export const socialLinks: { email?: string; linkedin?: string; github?: string; resume?: string } = {};
+export const socialLinks: { email?: string; linkedin?: string; github?: string; resume?: string; phone?: string } = {
+  email: "mailto:adityadubey1212007@gmail.com",
+  linkedin: "https://www.linkedin.com/in/aditya-dubey-a823a2390",
+  phone: "tel:+919579685588",
+};
 
 export const navItems = [
   { id: "home", label: "Home" },
