@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, FileText } from "lucide-react";
+import { Mail, Linkedin, Github, FileText, Phone } from "lucide-react";
 import { socialLinks } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 
@@ -8,6 +8,7 @@ export function Contact() {
     { label: "LinkedIn", href: socialLinks.linkedin, icon: Linkedin },
     { label: "GitHub", href: socialLinks.github, icon: Github },
     { label: "Resume", href: socialLinks.resume, icon: FileText },
+    { label: "Call Me", href: socialLinks.phone, icon: Phone },
   ].filter((b) => Boolean(b.href));
 
   return (
