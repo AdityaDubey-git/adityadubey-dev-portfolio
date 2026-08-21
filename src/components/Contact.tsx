@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, FileText } from "lucide-react";
+import { Mail, Linkedin, Github, FileText, Phone } from "lucide-react";
 import { socialLinks } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 
