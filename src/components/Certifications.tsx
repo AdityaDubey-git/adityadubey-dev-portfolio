@@ -11,12 +11,12 @@ export function Certifications() {
       title="Certifications"
       lead="Courses, training programs, and virtual internships I have completed."
     >
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((cert, i) => (
           <Reveal key={cert.name} delay={i * 50}>
-            <article className="flex h-full flex-col rounded-2xl border border-border bg-card/70 p-5 transition-transform hover:-translate-y-1">
+            <article className="flex h-full flex-col bg-card p-6 transition-colors hover:bg-secondary/60">
               <BadgeCheck className="size-5 text-primary" aria-hidden />
-              <h3 className="mt-4 text-base font-semibold">{cert.name}</h3>
+              <h3 className="mt-5 text-xl">{cert.name}</h3>
               <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
                 {cert.category}
               </p>
