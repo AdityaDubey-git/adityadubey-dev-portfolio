@@ -5,11 +5,11 @@ import { Reveal } from "./Reveal";
 export function Strengths() {
   return (
     <Section id="strengths" eyebrow="Beyond code" title="Strengths">
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
         {strengths.map((s, i) => (
           <Reveal key={s.name} delay={i * 40}>
-            <div className="flex h-full items-start gap-3 rounded-2xl border border-border bg-card/60 p-4 transition-colors hover:border-primary/40">
-              <span className="rounded-xl border border-border bg-secondary/60 p-2 text-primary">
+            <div className="flex h-full items-start gap-4 bg-card p-5 transition-colors hover:bg-secondary/60">
+              <span className="border border-border p-2 text-primary">
                 <s.icon className="size-4" aria-hidden />
               </span>
               <span>

@@ -18,20 +18,20 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} aria-labelledby={`${id}-heading`} className={cn("py-20 sm:py-28", className)}>
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
+    <section id={id} aria-labelledby={`${id}-heading`} className={cn("border-t border-border py-20 sm:py-28 lg:py-32", className)}>
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
+        <Reveal className="grid gap-5 lg:grid-cols-[0.42fr_1fr] lg:items-end">
           {eyebrow ? (
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              {eyebrow}
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              {id === "about" ? "01" : id === "education" ? "02" : id === "skills" ? "03" : id === "expertise" ? "04" : id === "projects" ? "05" : id === "experience" ? "06" : id === "certifications" ? "07" : id === "goals" ? "08" : id === "strengths" ? "09" : "10"} — {eyebrow}
             </p>
           ) : null}
-          <h2 id={`${id}-heading`} className="text-3xl font-bold sm:text-4xl">
-            {title}
-          </h2>
-          {lead ? <p className="mt-4 text-base leading-relaxed text-muted-foreground">{lead}</p> : null}
+          <div>
+            <h2 id={`${id}-heading`} className="text-5xl leading-none sm:text-6xl lg:text-7xl">{title}</h2>
+            {lead ? <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">{lead}</p> : null}
+          </div>
         </Reveal>
-        <div className="mt-12">{children}</div>
+        <div className="mt-14 lg:mt-20">{children}</div>
       </div>
     </section>
   );

@@ -17,10 +17,10 @@ export function Experience() {
               className="absolute -left-[1.85rem] top-6 size-2.5 rounded-full bg-primary ring-4 ring-background sm:-left-[2.35rem]"
               aria-hidden
             />
-            <div className="rounded-2xl border border-border bg-card/70 p-5 transition-transform hover:-translate-y-1 sm:p-6">
+            <div className="border-b border-border bg-card/40 p-5 transition-colors hover:bg-secondary/50 sm:p-6">
               <div className="flex flex-wrap items-center gap-3">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <span className="rounded-full border border-border bg-secondary/60 px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                <h3 className="text-2xl">{item.title}</h3>
+                <span className="border border-border px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                   {item.kind}
                 </span>
               </div>
@@ -29,7 +29,7 @@ export function Experience() {
                 {item.tools.map((tool) => (
                   <li
                     key={tool}
-                    className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs text-primary"
+                    className="border border-primary/25 px-3 py-1 text-xs text-primary"
                   >
                     {tool}
                   </li>

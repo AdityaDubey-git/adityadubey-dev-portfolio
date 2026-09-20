@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navItems, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
@@ -37,32 +37,32 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled
-          ? "border-b border-border/80 bg-background/85 backdrop-blur-xl"
+          ? "border-b border-border bg-background/92 backdrop-blur-xl"
           : "border-b border-transparent",
       )}
     >
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-3 sm:px-8"
+        className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
       >
         <a
           href="#home"
-          className="rounded-md text-sm font-bold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+          className="font-display text-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
-          <span className="text-gradient">Aditya</span> Dubey
+          ADITYA DUBEY<span className="text-primary">.</span>
         </a>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {navItems.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
                 aria-current={active === item.id ? "true" : undefined}
                 className={cn(
-                  "rounded-full px-3 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                  "border-b py-2 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
                   active === item.id
-                    ? "bg-secondary text-primary"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? "border-primary text-primary"
+                    : "border-transparent text-muted-foreground hover:text-foreground",
                 )}
               >
                 {item.label}
@@ -70,6 +70,10 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+
+        <a href="#contact" className="hidden items-center gap-2 border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-colors hover:border-primary hover:text-primary sm:inline-flex lg:hidden xl:inline-flex">
+          Let's talk <ArrowUpRight className="size-3.5" aria-hidden />
+        </a>
 
         <button
           type="button"
